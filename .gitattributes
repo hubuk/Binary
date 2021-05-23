@@ -1,0 +1,21 @@
+####################################################################
+# Attributes definitions
+####################################################################
+[attr]code             !binary text diff merge=text
+[attr]raw              !binary text diff merge
+[attr]windowsscript    !binary text eol=crlf diff merge=text
+[attr]nixscript        !binary text eol=lf diff merge=text
+[attr]binary           -text -diff -merge
+
+####################################################################
+# Default settings for all files
+####################################################################
+*                      binary
+
+####################################################################
+# File extensions
+####################################################################
+.gitattributes         code
+.gitignore             code
+.editorconfig          code
+*.cs                   code
