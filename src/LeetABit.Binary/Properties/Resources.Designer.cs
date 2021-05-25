@@ -61,11 +61,56 @@ namespace LeetABit.Binary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Argument must be an absolute path..
+        /// </summary>
+        internal static string Exception_Argument_AbsolutePath {
+            get {
+                return ResourceManager.GetString("Exception_Argument_AbsolutePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An instance of LeetABit.Binary.LogicalPath type was expected..
+        /// </summary>
+        internal static string Exception_Argument_LogicalPathExpected {
+            get {
+                return ResourceManager.GetString("Exception_Argument_LogicalPathExpected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specified LeetABit.Binary.LogicalPath argument and current instance both have to be absolute or both relative..
+        /// </summary>
+        internal static string Exception_Argument_LogicalPathOfDifferentKind {
+            get {
+                return ResourceManager.GetString("Exception_Argument_LogicalPathOfDifferentKind", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Result object represents a successfull operation..
         /// </summary>
         internal static string Exception_Argument_ResultSuccessfull {
             get {
                 return ResourceManager.GetString("Exception_Argument_ResultSuccessfull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to String cannot be composed of white spaces only..
+        /// </summary>
+        internal static string Exception_Argument_WhiteSpace {
+            get {
+                return ResourceManager.GetString("Exception_Argument_WhiteSpace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Operation allowed only for absolute path instance..
+        /// </summary>
+        internal static string Exception_InvalidOperation_AbsolutePath {
+            get {
+                return ResourceManager.GetString("Exception_InvalidOperation_AbsolutePath", resourceCulture);
             }
         }
     }

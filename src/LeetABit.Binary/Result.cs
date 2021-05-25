@@ -42,12 +42,24 @@ namespace LeetABit.Binary
         /// <summary>
         ///     Gets a value indicating whether the operation was executed successfully or not.
         /// </summary>
-        public bool IsSuccess => this.Exception is null;
+        public bool IsSuccess
+        {
+            get
+            {
+                return this.Exception is null;
+            }
+        }
 
         /// <summary>
         ///     Gets a value indicating whether the operation was executed with error or not.
         /// </summary>
-        public bool IsError => !this.IsSuccess;
+        public bool IsError
+        {
+            get
+            {
+                return !this.IsSuccess;
+            }
+        }
 
         /// <summary>
         ///     Creates a new instance of the <see cref="Result"/> class from an exception that represents an operation execution error.
