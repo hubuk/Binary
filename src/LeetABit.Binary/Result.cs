@@ -72,7 +72,7 @@ namespace LeetABit.Binary
         /// </returns>
         public static Result FromException(Exception exception)
         {
-            Requires.ArgumentNotNull(exception, nameof(exception));
+            _ = Requires.ArgumentNotNull(exception, nameof(exception));
 
             return new Result(exception);
         }
@@ -91,7 +91,7 @@ namespace LeetABit.Binary
         /// </returns>
         public static Result<T> FromException<T>(Exception exception)
         {
-            Requires.ArgumentNotNull(exception, nameof(exception));
+            _ = Requires.ArgumentNotNull(exception, nameof(exception));
 
             return new Result<T>(exception);
         }
@@ -127,8 +127,8 @@ namespace LeetABit.Binary
         /// </returns>
         public static Result Capture(Action action, Func<Exception, bool> exceptionFilter)
         {
-            Requires.ArgumentNotNull(action, nameof(action));
-            Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
+            _ = Requires.ArgumentNotNull(action, nameof(action));
+            _ = Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
 
             try
             {
@@ -159,8 +159,8 @@ namespace LeetABit.Binary
         /// </returns>
         public static Result<T> Capture<T>(Func<T?> func, Func<Exception, bool> exceptionFilter)
         {
-            Requires.ArgumentNotNull(func, nameof(func));
-            Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
+            _ = Requires.ArgumentNotNull(func, nameof(func));
+            _ = Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
 
             try
             {
@@ -183,7 +183,7 @@ namespace LeetABit.Binary
         /// </returns>
         public static Result Capture(Action action)
         {
-            Requires.ArgumentNotNull(action, nameof(action));
+            _ = Requires.ArgumentNotNull(action, nameof(action));
 
             return Result.Capture(action, e => true);
         }
@@ -202,7 +202,7 @@ namespace LeetABit.Binary
         /// </returns>
         public static Result<T> Capture<T>(Func<T?> func)
         {
-            Requires.ArgumentNotNull(func, nameof(func));
+            _ = Requires.ArgumentNotNull(func, nameof(func));
 
             return Result.Capture(func, e => true);
         }
@@ -221,8 +221,8 @@ namespace LeetABit.Binary
         /// </returns>
         public static async Task<Result> CaptureAsync(Func<Task> action, Func<Exception, bool> exceptionFilter)
         {
-            Requires.ArgumentNotNull(action, nameof(action));
-            Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
+            _ = Requires.ArgumentNotNull(action, nameof(action));
+            _ = Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
 
             try
             {
@@ -253,8 +253,8 @@ namespace LeetABit.Binary
         /// </returns>
         public static async Task<Result<T>> CaptureAsync<T>(Func<Task<T>> func, Func<Exception, bool> exceptionFilter)
         {
-            Requires.ArgumentNotNull(func, nameof(func));
-            Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
+            _ = Requires.ArgumentNotNull(func, nameof(func));
+            _ = Requires.ArgumentNotNull(exceptionFilter, nameof(exceptionFilter));
 
             try
             {
@@ -277,9 +277,9 @@ namespace LeetABit.Binary
         /// </returns>
         public static async Task<Result> CaptureAsync(Func<Task> action)
         {
-            Requires.ArgumentNotNull(action, nameof(action));
+            _ = Requires.ArgumentNotNull(action, nameof(action));
 
-            return await Result.CaptureAsync(action, e => true).ConfigureAwait(true);
+            return await Result.CaptureAsync(action, e => true).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -296,9 +296,9 @@ namespace LeetABit.Binary
         /// </returns>
         public static async Task<Result<T>> CaptureAsync<T>(Func<Task<T>> func)
         {
-            Requires.ArgumentNotNull(func, nameof(func));
+            _ = Requires.ArgumentNotNull(func, nameof(func));
 
-            return await Result.CaptureAsync(func, e => true).ConfigureAwait(true);
+            return await Result.CaptureAsync(func, e => true).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -70,6 +70,15 @@ namespace LeetABit.Binary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to An item with the same key has already been added..
+        /// </summary>
+        internal static string Exception_Argument_DuplicateKey {
+            get {
+                return ResourceManager.GetString("Exception_Argument_DuplicateKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to An instance of LeetABit.Binary.LogicalPath type was expected..
         /// </summary>
         internal static string Exception_Argument_LogicalPathExpected {
@@ -97,6 +106,15 @@ namespace LeetABit.Binary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Specified path cannot be a root..
+        /// </summary>
+        internal static string Exception_Argument_RootPath {
+            get {
+                return ResourceManager.GetString("Exception_Argument_RootPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to String cannot be composed of white spaces only..
         /// </summary>
         internal static string Exception_Argument_WhiteSpace {
@@ -106,11 +124,38 @@ namespace LeetABit.Binary.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Positive integer expected..
+        /// </summary>
+        internal static string Exception_ArgumentOutOfRange_PositiveValue {
+            get {
+                return ResourceManager.GetString("Exception_ArgumentOutOfRange_PositiveValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Operation allowed only for absolute path instance..
         /// </summary>
         internal static string Exception_InvalidOperation_AbsolutePath {
             get {
                 return ResourceManager.GetString("Exception_InvalidOperation_AbsolutePath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Specified offset points to a location outside of the current limit buffer..
+        /// </summary>
+        internal static string Exception_InvalidOperation_OffsetOutsideLimit {
+            get {
+                return ResourceManager.GetString("Exception_InvalidOperation_OffsetOutsideLimit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Data with the specified key has not been found in the storage..
+        /// </summary>
+        internal static string Exception_KeyNotFound_StorageKeyMissing {
+            get {
+                return ResourceManager.GetString("Exception_KeyNotFound_StorageKeyMissing", resourceCulture);
             }
         }
     }

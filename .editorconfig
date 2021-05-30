@@ -69,9 +69,9 @@ dotnet_remove_unnecessary_suppression_exclusions = none
 #### C# Coding Conventions ####
 
 # var preferences
-csharp_style_var_elsewhere = false:warning
-csharp_style_var_for_built_in_types = false:warning
-csharp_style_var_when_type_is_apparent = true:warning
+csharp_style_var_elsewhere = false:none
+csharp_style_var_for_built_in_types = false:none
+csharp_style_var_when_type_is_apparent = true:none
 
 # Expression-bodied members
 csharp_style_expression_bodied_accessors = false:warning
@@ -1315,7 +1315,7 @@ dotnet_diagnostic.RCS1007.severity = warning
 dotnet_diagnostic.RCS1008.severity = none
 
 # RCS1009: Use explicit type instead of 'var' (foreach variable).
-dotnet_diagnostic.RCS1009.severity = warning
+dotnet_diagnostic.RCS1009.severity = none
 
 # RCS1010: Use 'var' instead of explicit type (when the type is obvious).
 dotnet_diagnostic.RCS1010.severity = warning
@@ -1465,7 +1465,7 @@ dotnet_diagnostic.RCS1063.severity = warning
 dotnet_diagnostic.RCS1064.severity = warning
 
 # RCS1065: Avoid usage of while statement to create an inifinite loop.
-dotnet_diagnostic.RCS1065.severity = warning
+dotnet_diagnostic.RCS1065.severity = none
 
 # RCS1066: Remove empty 'finally' clause.
 dotnet_diagnostic.RCS1066.severity = warning
@@ -2179,7 +2179,7 @@ dotnet_diagnostic.S1123.severity = warning
 dotnet_diagnostic.S1125.severity = warning
 
 # S1128: Unused "using" should be removed
-dotnet_diagnostic.S1128.severity = warning
+dotnet_diagnostic.S1128.severity = none
 
 # S113: Files should contain an empty newline at the end
 dotnet_diagnostic.S113.severity = warning
@@ -2311,7 +2311,7 @@ dotnet_diagnostic.S1656.severity = warning
 dotnet_diagnostic.S1659.severity = warning
 
 # S1694: An abstract class should have both abstract and concrete methods
-dotnet_diagnostic.S1694.severity = warning
+dotnet_diagnostic.S1694.severity = none
 
 # S1696: NullReferenceException should not be caught
 dotnet_diagnostic.S1696.severity = warning
@@ -2575,7 +2575,7 @@ dotnet_diagnostic.S3240.severity = warning
 dotnet_diagnostic.S3241.severity = warning
 
 # S3242: Method parameters should be declared with base types
-dotnet_diagnostic.S3242.severity = warning
+dotnet_diagnostic.S3242.severity = none
 
 # S3244: Anonymous delegates should not be used to unsubscribe from Events
 dotnet_diagnostic.S3244.severity = warning

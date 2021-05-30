@@ -38,7 +38,7 @@ namespace LeetABit.Binary
         internal Result(Exception exception)
             : base(exception)
         {
-            Requires.ArgumentNotNull(exception, nameof(exception));
+            _ = Requires.ArgumentNotNull(exception, nameof(exception));
 
             this.Value = default;
         }

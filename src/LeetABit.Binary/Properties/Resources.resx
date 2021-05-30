@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Exception_ArgumentOutOfRange_PositiveValue" xml:space="preserve">
+    <value>Positive integer expected.</value>
+  </data>
   <data name="Exception_Argument_AbsolutePath" xml:space="preserve">
     <value>Argument must be an absolute path.</value>
+  </data>
+  <data name="Exception_Argument_DuplicateKey" xml:space="preserve">
+    <value>An item with the same key has already been added.</value>
   </data>
   <data name="Exception_Argument_LogicalPathExpected" xml:space="preserve">
     <value>An instance of LeetABit.Binary.LogicalPath type was expected.</value>
@@ -129,10 +135,19 @@
   <data name="Exception_Argument_ResultSuccessfull" xml:space="preserve">
     <value>Result object represents a successfull operation.</value>
   </data>
+  <data name="Exception_Argument_RootPath" xml:space="preserve">
+    <value>Specified path cannot be a root.</value>
+  </data>
   <data name="Exception_Argument_WhiteSpace" xml:space="preserve">
     <value>String cannot be composed of white spaces only.</value>
   </data>
   <data name="Exception_InvalidOperation_AbsolutePath" xml:space="preserve">
     <value>Operation allowed only for absolute path instance.</value>
+  </data>
+  <data name="Exception_InvalidOperation_OffsetOutsideLimit" xml:space="preserve">
+    <value>Specified offset points to a location outside of the current limit buffer.</value>
+  </data>
+  <data name="Exception_KeyNotFound_StorageKeyMissing" xml:space="preserve">
+    <value>Data with the specified key has not been found in the storage.</value>
   </data>
 </root>

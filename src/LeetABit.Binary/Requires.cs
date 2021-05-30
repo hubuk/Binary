@@ -17,18 +17,24 @@ namespace LeetABit.Binary
         /// <summary>
         ///     Checks whether the specified argument is not <see langword="null"/>.
         /// </summary>
+        /// <typeparam name="T">
+        ///     Type of the argument.
+        /// </typeparam>
         /// <param name="argument">
         ///     Argument object to check.
         /// </param>
         /// <param name="parameterName">
         ///     Name of the parameter for which the arguemnt was bound.
         /// </param>
+        /// <returns>
+        ///     <paramref name="argument"/> argument.
+        /// </returns>
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="argument"/> is <see langword="null"/>.
         /// </exception>
-        public static void ArgumentNotNull(object argument, string parameterName)
+        public static T ArgumentNotNull<T>(T argument, string parameterName)
         {
-            _ = argument ?? throw new ArgumentNullException(parameterName);
+            return argument ?? throw new ArgumentNullException(parameterName);
         }
 
         /// <summary>
@@ -40,40 +46,111 @@ namespace LeetABit.Binary
         /// <param name="parameterName">
         ///     Name of the parameter for which the arguemnt was bound.
         /// </param>
+        /// <returns>
+        ///     <paramref name="argument"/> argument.
+        /// </returns>
         /// <exception cref="ArgumentNullException">
         ///     <paramref name="argument"/> is <see langword="null"/>.
         /// </exception>
         /// <exception cref="ArgumentException">
         ///     <paramref name="argument"/> is composed of white spaces only.
         /// </exception>
-        public static void ArgumentNotNullAndNotWhiteSpace(string argument, string parameterName)
+        public static string ArgumentNotNullAndNotWhiteSpace(string argument, string parameterName)
         {
-            ArgumentNotNull(argument, parameterName);
+            _ = ArgumentNotNull(argument, parameterName);
 
-            if (string.IsNullOrWhiteSpace(argument))
-            {
-                throw new ArgumentException(Resources.Exception_Argument_WhiteSpace);
-            }
+            return !string.IsNullOrWhiteSpace(argument)
+                ? argument
+                : throw new ArgumentException(Resources.Exception_Argument_WhiteSpace, parameterName);
         }
 
         /// <summary>
-        ///     Throws an <see cref="InvalidOperationException"/> if the <paramref name="condition"/> is <see langword="false"/>.
+        ///     Checks whether the specified path is not a root absolute path.
         /// </summary>
-        /// <param name="condition">
-        ///     Condition to evaluate.
+        /// <param name="path">
+        ///     Path to check.
         /// </param>
-        /// <param name="message">
-        ///     Message of the exception to be thrown.
+        /// <param name="parameterName">
+        ///     Name of the parameter for which the arguemnt was bound.
         /// </param>
-        /// <exception cref="InvalidOperationException">
-        ///     <paramref name="condition"/> is <see langword="false"/>.
+        /// <returns>
+        ///     <paramref name="path"/> argument.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="path"/> is a root path.
+        ///     <para>-or-</para>
+        ///     <paramref name="path"/> is a relative path.
         /// </exception>
-        public static void ObjectState(bool condition, string message)
+        public static LogicalPath ArgumentNotRootAbsolutePath(LogicalPath path, string parameterName)
         {
-            if (!condition)
-            {
-                throw new InvalidOperationException(message);
-            }
+            _ = ArgumentNotRootPath(path, parameterName);
+            return ArgumentAbsolutePath(path, parameterName);
+        }
+
+        /// <summary>
+        ///     Checks whether the specified path is not a root path.
+        /// </summary>
+        /// <param name="path">
+        ///     Path to check.
+        /// </param>
+        /// <param name="parameterName">
+        ///     Name of the parameter for which the arguemnt was bound.
+        /// </param>
+        /// <returns>
+        ///     <paramref name="path"/> argument.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="path"/> is a root path.
+        /// </exception>
+        public static LogicalPath ArgumentNotRootPath(LogicalPath path, string parameterName)
+        {
+            return !path.IsRoot
+                ? path
+                : throw new ArgumentException(Resources.Exception_Argument_RootPath, parameterName);
+        }
+
+        /// <summary>
+        ///     Checks whether the specified path is an absolute path.
+        /// </summary>
+        /// <param name="path">
+        ///     Path to check.
+        /// </param>
+        /// <param name="parameterName">
+        ///     Name of the parameter for which the arguemnt was bound.
+        /// </param>
+        /// <returns>
+        ///     <paramref name="path"/> argument.
+        /// </returns>
+        /// <exception cref="ArgumentException">
+        ///     <paramref name="path"/> is a relative path.
+        /// </exception>
+        public static LogicalPath ArgumentAbsolutePath(LogicalPath path, string parameterName)
+        {
+            return path.IsAbsolute
+                ? path
+                : throw new ArgumentException(Resources.Exception_Argument_AbsolutePath, parameterName);
+        }
+
+        /// <summary>
+        ///     Checks whether the specified integer is greater than zero.
+        /// </summary>
+        /// <param name="value">
+        ///     Value to verify.
+        /// </param>
+        /// <param name="parameterName">
+        ///     Name of the parameter for which the arguemnt was bound.
+        /// </param>
+        /// <returns>
+        ///     <paramref name="value"/> argument.
+        /// </returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        ///     <paramref name="value"/> is not greater than zero.
+        /// </exception>
+        public static int ArgumentGreaterThanZero(int value, string parameterName)
+        {
+            return value > 0
+                ? value
+                : throw new ArgumentOutOfRangeException(parameterName, value, Resources.Exception_ArgumentOutOfRange_PositiveValue);
         }
 
         /// <summary>
@@ -96,6 +173,26 @@ namespace LeetABit.Binary
             if (!condition)
             {
                 throw new ArgumentException(message, parameterName);
+            }
+        }
+
+        /// <summary>
+        ///     Throws an <see cref="InvalidOperationException"/> if the <paramref name="condition"/> is <see langword="false"/>.
+        /// </summary>
+        /// <param name="condition">
+        ///     Condition to evaluate.
+        /// </param>
+        /// <param name="message">
+        ///     Message of the exception to be thrown.
+        /// </param>
+        /// <exception cref="InvalidOperationException">
+        ///     <paramref name="condition"/> is <see langword="false"/>.
+        /// </exception>
+        public static void ObjectState(bool condition, string message)
+        {
+            if (!condition)
+            {
+                throw new InvalidOperationException(message);
             }
         }
     }

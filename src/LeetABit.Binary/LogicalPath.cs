@@ -70,7 +70,7 @@ namespace LeetABit.Binary
         /// </exception>
         private LogicalPath(string path)
         {
-            Requires.ArgumentNotNull(path, nameof(path));
+            _ = Requires.ArgumentNotNull(path, nameof(path));
 
             this.path = path;
         }
@@ -89,7 +89,7 @@ namespace LeetABit.Binary
         /// </exception>
         private LogicalPath(SerializationInfo info, StreamingContext context)
         {
-            Requires.ArgumentNotNull(info, nameof(info));
+            _ = Requires.ArgumentNotNull(info, nameof(info));
 
             this.path = info.GetString(nameof(this.path));
         }
@@ -191,7 +191,7 @@ namespace LeetABit.Binary
         /// </param>
         public static implicit operator LogicalPath(string path)
         {
-            Requires.ArgumentNotNull(path, nameof(path));
+            _ = Requires.ArgumentNotNull(path, nameof(path));
 
             return FromString(path);
         }
@@ -429,7 +429,7 @@ namespace LeetABit.Binary
         /// </exception>
         public static string Normalize(string path)
         {
-            Requires.ArgumentNotNull(path, nameof(path));
+            _ = Requires.ArgumentNotNull(path, nameof(path));
 
             string trimmed = path.TrimStart();
             bool isAbsolute = trimmed.Length > 0 && trimmed[0] == SeparatorCharacter;
